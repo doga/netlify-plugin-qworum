@@ -1,5 +1,10 @@
 name: 'netlify-plugin-{{name}}'
 inputs: []
+  # - name: originUrl
+  #   description: Site's origin URL. Defaults to Netlify's SITE URL.
+  #   default: null
+  #   required: false
+
 # Example inputs:
 #  - name: example
 #    description: Example description
