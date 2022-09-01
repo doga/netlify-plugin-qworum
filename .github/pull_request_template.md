@@ -1,34 +1,30 @@
-🎉 Thanks for sending this pull request! 🎉
+# netlify-plugin-qworum
 
-Please make sure the title is clear and descriptive.
+New build plugin for Netlify.
 
-If you are fixing a typo or documentation, please skip these instructions.
+## Problem description
 
-Otherwise please fill in the sections below.
+New build plugin for Netlify! [Qworum](https://qworum.net) provides advanced web browser functionality that websites can use, but Qworum must be explicity enabled for websites that wish to use it. If Qworum is unavailable to a website that wishes to use it, then the website may not function properly, or may be unable to provide some of its functionality to its users.
 
-**Which problem is this pull request solving?**
+## Issues and pull requests related to this problem
 
-Example: I'm always frustrated when [...]
+None.
 
-**List other issues or pull requests related to this problem**
+## Solution description
 
-Example: This fixes #5012
+This build plugin verifies that the website being built is entitled to use Qworum, so that the website will work correctly when deployed. If the website isn't entitled, then this plugin will abort the build process and remind the user to enable Qworum for that website.
 
-**Describe the solution you've chosen**
+## Alternative solutions
 
-Example: I've fixed this by [...]
+There is no alternative. Without this plugin, some deployed websites may not work correctly.
 
-**Describe alternatives you've considered**
-
-Example: Another solution would be [...]
-
-**Checklist**
+## Checklist
 
 Please add a `x` inside each checkbox:
 
-- [ ] I have read the [contribution guidelines](../blob/master/CONTRIBUTING.md).
-- [ ] I have added tests (we are enforcing 100% test coverage).
-- [ ] I have added documentation in the `README.md`, the `docs` directory (if
+- [x] I have read the [contribution guidelines](../blob/master/CONTRIBUTING.md).
+- [x] I have added tests (we are enforcing 100% test coverage).
+- [x] I have added documentation in the `README.md`, the `docs` directory (if
       any) and the `examples` directory (if any).
-- [ ] The status checks are successful (continuous integration). Those can be
+- [x] The status checks are successful (continuous integration). Those can be
       seen below.

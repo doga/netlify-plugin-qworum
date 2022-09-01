@@ -6,7 +6,10 @@
 import process from 'node:process';
 
 // http client
-import got from 'got';
+// import got from 'got';
+
+import { verifyWebsiteEntitlement } from "./modules/website-entitlement-verifier.mjs";
+
 
 /* eslint-disable no-unused-vars */
 // The plugin main logic uses `on...` event handlers that are triggered on
@@ -88,35 +91,21 @@ export const onPreBuild = async function ({
     functions,
   },
 }) {
+  // verify website entitlement
   try {
-    // console.log(`site url: ${process.env.URL}`);
+    const siteUrl = process.env.URL;
+    console.log(`site url: ${siteUrl}`);
 
-    const
-    siteUrlString            = process.env.URL || 'https://example.com',
-    siteUrl                  = new URL(`${siteUrlString}`),
-    enabledSiteUrlStringsUrl = new URL('https://qworum.net/websites-using-qworum.json'),
-    enabledSiteUrlStrings    = await got(`${enabledSiteUrlStringsUrl}`).json(),
-    siteEnabled              = enabledSiteUrlStrings.find(enabledSiteUrlString => enabledSiteUrlString.startsWith(siteUrlString));
-
-    // console.log(`site url: ${siteUrlString}`);
-    // console.log(`enabled sites: ${enabledSiteUrlStrings}`);
+    const siteEnabled = await verifyWebsiteEntitlement(siteUrl);
 
     if (!siteEnabled) {
       throw new Error(`Qworum is not enabled for ${siteUrl}.`);
     }
 
-    // Shell commands are printed in Netlify logs
-    // await run('echo', ['Hello world!\n'])
-
   } catch (error) {
     // Report a user error
     build.failBuild(`To enable Qworum for your website for free, just send your website URL to info@qworum.net with the subject line "I'd like to use Qworum on this website".`, { error })
   }
-
-  // Console logs are shown in Netlify logs
-  // console.log('Netlify configuration', netlifyConfig)
-  // console.log('Plugin configuration', inputs)
-  // console.log('Build directory', PUBLISH_DIR)
 
   // Display success information
   status.show({ summary: 'Build can proceed, Qworum is already enabled for this website.' })
