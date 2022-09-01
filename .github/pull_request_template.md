@@ -4,7 +4,7 @@ New build plugin for Netlify.
 
 ## Problem description
 
-New build plugin for Netlify! [Qworum](https://qworum.net) provides advanced web browser functionality that websites can use, but Qworum must be explicity enabled for websites that wish to use it. If Qworum is unavailable to a website that wishes to use it, then the website may not function properly, or may be unable to provide some of its functionality to its users.
+[Qworum](https://qworum.net) provides advanced web browser functionality that websites can use, but Qworum must be explicity enabled for websites that wish to use it. If Qworum is unavailable to a website that wishes to use it, then the website may not function properly, or may be unable to provide some of its functionality to its users.
 
 ## Issues and pull requests related to this problem
 
