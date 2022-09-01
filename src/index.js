@@ -94,7 +94,7 @@ export const onPreBuild = async function ({
   // verify website entitlement
   try {
     const siteUrl = process.env.URL;
-    console.log(`site url: ${siteUrl}`);
+    // console.log(`site url: ${siteUrl}`);
 
     const siteEnabled = await verifyWebsiteEntitlement(siteUrl);
 
