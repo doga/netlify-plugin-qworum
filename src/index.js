@@ -104,7 +104,7 @@ export const onPreBuild = async function ({
 
   } catch (error) {
     // Report a user error
-    build.failBuild(`To enable Qworum for your website for free, just send your website URL to info@qworum.net with the subject line "I'd like to use Qworum on this website".`, { error })
+    build.failBuild(`To enable Qworum for your website for free, just send your website URL to support@qworum.net with the subject line "I'd like to use Qworum on this website".`, { error })
   }
 
   // Display success information
