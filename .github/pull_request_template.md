@@ -16,7 +16,7 @@ This build plugin verifies that the website being built is entitled to use Qworu
 
 ## Alternative solutions
 
-There is no alternative. Without this plugin, some deployed websites may not work correctly.
+There is no alternative. Without this plugin, some deployed websites may not work correctly if they are using Qworum.
 
 ## Checklist
 
