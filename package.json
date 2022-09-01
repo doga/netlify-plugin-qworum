@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-qworum",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Netlify Build plugin - Authorises the build if the website is allowed to use Qworum features on Web browsers.",
   "type": "module",
   "exports": "./src/index.js",
