@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-qworum",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Netlify Build plugin for Qworum - Checks whether a website that is being deployed on Netlify is entitled to use Qworum.",
   "type": "module",
   "exports": "./src/index.js",
