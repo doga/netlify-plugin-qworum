@@ -108,7 +108,7 @@ export const onPreBuild = async function ({
   }
 
   // Display success information
-  status.show({ summary: 'Build can proceed, Qworum is already enabled for this website.' })
+  status.show({ summary: 'This website is entitled to use Qworum.' })
 }
 
 // Other available event handlers
