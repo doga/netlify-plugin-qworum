@@ -14,10 +14,14 @@ Qworum provides advanced web browser functionality that websites can use. If you
 
 Enabling Qworum for your website is FREE, and always will be.
 
+Read the [instructions for enabling Qworum on your website](https://qworum.net/en/#entitlement).
+
 ## What is Qworum?
 
 [Qworum](https://qworum.net/en/) is the _Service Web_ that enables modular and distributed web applications.
 
-Qworum reduces the time and effort required for developing web applications considerably through modularity and third-party services. With Qworum, web applications can call remote full-page interactive services instead of implementing those interactive workflows themselves. You can also return the favor: any website can in turn also provide Qworum services to other websites.
+Qworum reduces the time and effort required for developing web applications considerably through modularity and third-party services. With Qworum, web applications can call remote full-page interactive services instead of implementing those interactive workflows themselves.
+
+You can also return the favor: any website can in turn also provide Qworum services to other websites.
 
 ∎
