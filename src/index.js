@@ -1,6 +1,15 @@
-// This is the main file for the Netlify Build plugin Qworum.
-// Please read the comments to learn more about the Netlify Build plugin syntax.
-// Find more information in the Netlify documentation.
+/**
+ * @file   Qworum's build plugin for Netlify deployments.
+ * @see    {@link https://qworum.net/}
+ * @see    {@link https://docs.netlify.com/integrations/build-plugins/create-plugins/}
+ * @author Doğa Armangil <d.armangil@qworum.net>
+ */
+
+// environment variables
+import process from 'node:process'
+
+// build plugin implementation
+import { Qworum } from './modules/qworum.mjs'
 
 /* eslint-disable no-unused-vars */
 // The plugin main logic uses `on...` event handlers that are triggered on
@@ -70,8 +79,10 @@ export const onPreBuild = async function ({
   },
 }) {
   try {
+    await Qworum.onPreBuild(process.env.URL)
+
     // Commands are printed in Netlify logs
-    await run('echo', ['Hello world!\n'])
+    // await run('echo', ['Hello world!\n']);
   } catch (error) {
     // Report a user error
     build.failBuild('Error message', { error })
@@ -83,7 +94,7 @@ export const onPreBuild = async function ({
   console.log('Build directory', PUBLISH_DIR)
 
   // Display success information
-  status.show({ summary: 'Success!' })
+  status.show({ summary: '🎉 Success!' })
 }
 
 // Other available event handlers

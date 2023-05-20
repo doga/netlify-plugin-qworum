@@ -1,4 +1,6 @@
-Netlify Build plugin Qworum - Check whether Qworum❖ is enabled for the deployed website. (◆ The frontend platform for supercharged web applications and services.).
+Netlify Build plugin Qworum - Check whether Qworum❖ is enabled for the deployed
+website. (◆ The frontend platform for supercharged web applications and
+services.).
 
 # Install
 
