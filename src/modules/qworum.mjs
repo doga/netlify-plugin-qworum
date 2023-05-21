@@ -128,8 +128,7 @@ class Qworum {
 
     try {
       // fetch the entitlements file
-      const 
-        webResponse = entitlements
+      const webResponse = entitlements
           ? null
           : await axios.get(domainEntitlementsUrl),
         entitlementsObject = entitlements ? null : webResponse.data
