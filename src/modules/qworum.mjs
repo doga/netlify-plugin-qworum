@@ -42,22 +42,26 @@ class QworumEntitlements {
    */
   constructor(entitlementsObject) {
     // TODO: check arguments more thoroughly
-    if (typeof entitlementsObject.domainEntitlement !== Array)
+    // console.debug(entitlementsObject)
+    if (!(entitlementsObject.domainEntitlement instanceof Array))
       entitlementsObject.domainEntitlement = [
         entitlementsObject.domainEntitlement,
       ]
 
+    // console.debug('building entitlement object from:', entitlementsObject)
+
     this.entitlements = entitlementsObject.domainEntitlement.map(
-      (e) => new QworumEntitlement(e.domain, e.subdomainsCount),
+      (e) => new QworumEntitlement(e),
     )
   }
 
   /**
    * Decides to deploy a website, or not.
-   * @param {string} domain - A DNS domain.
+   * @param {(string | undefined)} domain - A DNS domain.
    * @returns {boolean}
    */
   domainIsEntitled(domain) {
+    if (!domain) return true
     const entitlement = this.entitlements.find(
       (e) =>
         e.domain === domain ||
@@ -101,7 +105,7 @@ class Qworum {
    * Throws a QworumEntitlementError if Qworum is not activated.
    * @static
    * @param {(URL | string)} url - URL of the website that is being deployed to Netlify.
-   * @param {(QworumEntitlements | null)} testEntitlements - Entitlements to use during local testing.
+   * @param {(QworumEntitlements | undefined)} testEntitlements - Entitlements to use during local testing.
    * @throws {(TypeError | QworumEntitlementError)}
    */
   static async onPreBuild(url, testEntitlements) {
@@ -120,23 +124,23 @@ class Qworum {
       return
     }
 
-    if (testEntitlements) {
-      // running in test mode
-      return
-    }
+    let entitlements = testEntitlements
 
     try {
-      // fetch the entitlements file from qworum.net
-      const // webResponse        = await got(domainEntitlementsUrl),
-        // entitlementsObject = webResponse.json(),
-        webResponse = await axios.get(domainEntitlementsUrl)
-      // entitlementsObject = webResponse.json(),
-      // entitlements       = new QworumEntitlements(entitlementsObject);
+      // fetch the entitlements file
+      const 
+        webResponse = entitlements
+          ? null
+          : await axios.get(domainEntitlementsUrl),
+        entitlementsObject = entitlements ? null : webResponse.data
 
-      console.info(`webResponse: ${webResponse}`)
+      if (entitlementsObject)
+        entitlements = new QworumEntitlements(entitlementsObject)
 
-      // if(!entitlements.domainIsEntitled(url.hostname))
-      // throw new QworumEntitlementError(`${url.hostname} is not entitled to use Qworum.`);
+      if (!entitlements.domainIsEntitled(url.hostname))
+        throw new QworumEntitlementError(
+          `${url.hostname} is not entitled to use Qworum.`,
+        )
     } catch (error) {
       if (error instanceof QworumEntitlementError) throw error
     }

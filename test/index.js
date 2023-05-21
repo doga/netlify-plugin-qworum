@@ -33,6 +33,9 @@ import test from 'ava'
 //   t.true(success)
 // })
 
-test('Empty test', async (t) => {
-  t.true(true);
+
+// list of ava assertions: https://github.com/avajs/ava/blob/HEAD/docs/03-assertions.md#built-in-assertions
+
+test('(Empty test)', async (t) => {
+  t.pass();
 });

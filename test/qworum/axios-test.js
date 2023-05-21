@@ -12,14 +12,13 @@ import test from 'ava';
 import axios from 'axios';
 
 
-test('Qworum test passes', async (t) => {
+test('Can download domain entitlements', async (t) => {
   const response = await axios.get('https://qworum.net/semantic/domain-entitlements.jsonld');
-  console.debug(response.status);
-  console.debug(typeof response.data);
-  console.debug(response.data);
-  console.debug(response.data['@context']);
+  t.is(response.status, 200);
+  // console.debug('domain entitlements:', response.data);
+  t.false(response.data instanceof Array);
+  t.is(response.data['@context'], 'https://qworum.net/semantic/contexts/business.jsonld');
 
-  // Check that build succeeded
-  t.true(true);
+  // t.true(true);
 
 });
