@@ -18,6 +18,9 @@
     "netlify-plugin",
     "netlify"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Doğa Armangil <d.armangil@qworum.net>",
   "license": "Apache-2.0",
   "repository": "//github.com/doga/netlify-plugin-qworum",
