@@ -79,6 +79,7 @@ export const onPreBuild = async function ({
   },
 }) {
   try {
+    // https://docs.netlify.com/configure-builds/environment-variables/#deploy-urls-and-metadata
     await Qworum.onPreBuild(process.env.URL)
 
     // Commands are printed in Netlify logs
