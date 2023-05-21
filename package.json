@@ -1,7 +1,7 @@
 {
-  "name": "netlify-plugin-qworum",
+  "name": "@qworum/netlify-plugin-qworum",
   "version": "1.0.9",
-  "description": "Netlify Build plugin - Check whether Qworum❖ is enabled for the deployed website. (◆ The frontend platform for supercharged web applications and services.)",
+  "description": "A Netlify build plugin that checks whether a Qworum-based website is entitled to use Qworum when deployed on a DNS domain.",
   "type": "module",
   "exports": "./src/index.js",
   "main": "./src/index.js",
