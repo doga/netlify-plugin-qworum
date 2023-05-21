@@ -1,6 +1,6 @@
 {
   "name": "netlify-plugin-qworum",
-  "version": "1.0.0",
+  "version": "1.0.9",
   "description": "Netlify Build plugin - Check whether Qworum❖ is enabled for the deployed website. (◆ The frontend platform for supercharged web applications and services.)",
   "type": "module",
   "exports": "./src/index.js",
