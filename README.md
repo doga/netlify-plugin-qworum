@@ -57,7 +57,11 @@ Details of a website that uses this build plugin for Netlify deployments:
 
 - Live site: [netlify.template.qworum.net](https://netlify.template.qworum.net/).
 - [Deployment logs](https://app.netlify.com/sites/qworum-template/deploys/647045122e5f930008a22b43#L62-L101).
-- [GitHub repository](https://github.com/doga/qworum-netlify-template).
+- [GitHub repository (template for Qworum websites)](https://github.com/doga/qworum-netlify-template).
+
+Deploy to this demo website to Netlify by clicking on the button below. Alternatively, create your own GitHub repo from this [template repo](https://github.com/doga/qworum-netlify-template) and, click on your own updated button.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/doga/qworum-netlify-template)
 
 ## License
 
