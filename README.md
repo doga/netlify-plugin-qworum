@@ -10,16 +10,16 @@
 - provides advanced web browser capabilities to web applications.
 - enables modular and distributed web applications.
 
-## When to use Qworum
+## When to use this build plugin
 
 It is recommended that you [add this plugin to your Netlify build process](https://app.netlify.com/plugins/@qworum/netlify-plugin-qworum/install) if:
 
 - your website relies on Qworum, and
 - you are deploying your website on Netlify.
 
-## What Qworum does
+## What this build plugin does
 
-This Netlify Build Plugin:
+This Netlify build plugin:
 
 - checks whether the website that is being deployed on Netlify is entitled to use Qworum.
 - works toward preventing runtime errors in production websites that rely on Qworum; if this plugin aborts a build process, then your website would certainly have shown faulty behaviour when deployed.
