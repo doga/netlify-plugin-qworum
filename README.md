@@ -65,6 +65,6 @@ Deploy to this demo website to Netlify by clicking on the button below. Alternat
 
 ## License
 
-This software is released under the terms of the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
+This software is released under the terms of the [MIT License](https://opensource.org/license/mit/).
 
 ∎
